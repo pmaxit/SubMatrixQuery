@@ -179,7 +179,7 @@ void Class_4_Rect::find_type_new2(link_type node, std::vector<QRect> &rects){
         else
         if ( x >= i->x() && y <= i->y()){
             // third quadrant
-            std::cout<<*i<<std::endl;
+            //std::cout<<*i<<std::endl;
             QPoint ref = *i;
             if(thirdvy.size() > 0){
                 auto it = thirdvy.end() - 1;
@@ -385,7 +385,7 @@ void Class_4_Rect::find_type2(link_type node, std::vector<QRect> &rects){
 
          if ( x >= i->x() && y <= i->y()){
             // third quadrant
-            std::cout<<*i<<std::endl;
+            //std::cout<<*i<<std::endl;
             QPoint ref = *i;
             for(auto it = thirdvy.begin(); it != thirdvy.end(); it++){
                 if(it->second.x() > ref.x()){

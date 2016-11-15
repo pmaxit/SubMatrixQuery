@@ -13,6 +13,9 @@ maxRectangle::maxRectangle(QObject *parent): QObject(parent)
 void maxRectangle::setBoundaryRectangle(int width, int height){
     m_dp->setBoundaryRectangle(width, height);
     m_bp->setBoundaryRectangle(width, height);
+
+    m_width = width;
+    m_height = height;
 }
 
 void maxRectangle::addPoints(std::vector<QPoint> &points){
@@ -41,14 +44,14 @@ void maxRectangle::process(){
     rectMaps.insert(4, QVector<QRect>::fromStdVector(dominants));
 
     // find inner rectangle with 3 points in one quadrant
-    dominants = m_bp->buildRectangles(m_points, QRect(QPoint(0,0),QPoint(800, 600)), 1);
+    dominants = m_bp->buildRectangles(m_points, QRect(QPoint(0,0),QPoint(m_width, m_height)), 1);
     rectMaps.insert(5, QVector<QRect>::fromStdVector(dominants));
 
     // find inner rectangle with 1 point in each quadrant
-    dominants = m_bp->buildRectangles(m_points, QRect(QPoint(0,0),QPoint(800, 600)), 2);
+    dominants = m_bp->buildRectangles(m_points, QRect(QPoint(0,0),QPoint(m_width, m_height)), 2);
     rectMaps.insert(6, QVector<QRect>::fromStdVector(dominants));
 
-    dominants = m_bp->buildRectangles(m_points, QRect(QPoint(0,0),QPoint(800, 600)), 3);
+    dominants = m_bp->buildRectangles(m_points, QRect(QPoint(0,0),QPoint(m_width, m_height)), 3);
     rectMaps.insert(7, QVector<QRect>::fromStdVector(dominants));
 
     //QVector<QRect> temp = QVector<QRect>::fromStdVector(dominants);

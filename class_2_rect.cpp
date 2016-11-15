@@ -58,6 +58,7 @@ std::vector<QPoint> Class_2_Rect::getPoints(const std::vector<QPoint> &points, c
 }
 
 void printMat(int **mat, int r, int c){
+    std::cout<<"MATRIX A  "<<endl;
     for(int i =0; i< r-1; i++){
         for(int j=0; j< c-1; j++){
             std::cout<<mat[i][j]<<"   ";
@@ -186,10 +187,6 @@ void Class_2_Rect::find_type(link_type node, std::vector<QRect> &rects){
            QPoint p1 = points[i];
            QPoint p2 = points[i+1];
 
-           // rectangle (a, b, p1, p2)
-           // get the index to store
-           //std::cout<<"RECTANGLE "<<*a<<*b<<p1<<p2<<"END "<<std::endl;
-           //std::cout<<"LENGTH "<<p2.x() - a->x()<<" WIDTH "<<p1.y() - b->y();
            auto p = std::find(firstvx.begin(), firstvx.end(), p1);
            size_t index = std::distance(firstvx.begin(), p);
            mat[rindex][index] = (b->y() - p1.y())*(p2.x() - a->x());

@@ -31,6 +31,9 @@ private:
     dominantPoints* m_dp;
     BoundedRectangle *m_bp;
 
+    int m_width;
+    int m_height;
+
 signals:
     void displayRectangle(QMap<int, QVector<QRect> >& rects);
 };

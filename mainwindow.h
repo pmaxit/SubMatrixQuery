@@ -26,6 +26,7 @@ public:
 
     void setQueryPoint(QPoint &p);
     void mouseReleaseEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
+    void setMySize();
 
 private slots:
 

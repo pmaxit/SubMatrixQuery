@@ -11,16 +11,17 @@
 //QSettings MainWindow::settings(("submatrix","utdallas"));
 QSettings MainWindow::settings("/Users/puneet/iosettings.ini", QSettings::IniFormat);
 
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    setMinimumSize(800,600);
     setWindowTitle("Maximum Empty Rectangle Query");
-
     mr = new maxRectangle(this);
-    mr->setBoundaryRectangle(800, 600);
+
+    setMySize();
+
     statusBar()->showMessage(tr("Ready"));
     qsrand(QDateTime::currentMSecsSinceEpoch());
 
@@ -32,6 +33,25 @@ MainWindow::MainWindow(QWidget *parent) :
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::setMySize(){
+    setMinimumSize(800, 600);
+
+    int width = 2400;
+    int height = 2400;
+
+    ui->widget->setMinimumHeight(height);
+    ui->widget->setMinimumWidth(width);
+
+    QString str;
+    str.setNum(ui->widget->width());
+    ui->label_width->setText(str);
+
+    str.setNum(ui->widget->height());
+    ui->label_height->setText(str);
+
+    mr->setBoundaryRectangle(width, height);
 }
 
 void MainWindow::on_addRectangles(QMap<int, QVector<QRect> > &rects){
