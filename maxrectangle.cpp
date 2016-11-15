@@ -48,6 +48,9 @@ void maxRectangle::process(){
     dominants = m_bp->buildRectangles(m_points, QRect(QPoint(0,0),QPoint(800, 600)), 2);
     rectMaps.insert(6, QVector<QRect>::fromStdVector(dominants));
 
+    dominants = m_bp->buildRectangles(m_points, QRect(QPoint(0,0),QPoint(800, 600)), 3);
+    rectMaps.insert(7, QVector<QRect>::fromStdVector(dominants));
+
     //QVector<QRect> temp = QVector<QRect>::fromStdVector(dominants);
     //rectMaps.insert(5, temp);
 

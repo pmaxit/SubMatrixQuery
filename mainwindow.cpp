@@ -8,7 +8,8 @@
 #include <QMap>
 #include <QMouseEvent>
 
-QSettings MainWindow::settings(("submatrix","utdallas"));
+//QSettings MainWindow::settings(("submatrix","utdallas"));
+QSettings MainWindow::settings("/Users/puneet/iosettings.ini", QSettings::IniFormat);
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),

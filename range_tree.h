@@ -10,7 +10,8 @@
 
 #include "class_3_rect.h"
 #include "class_4_rect.h"
-
+#include "class_2_rect.h"
+#include "class_1_rect.h"
 
 class Range_tree: public QObject
 {
@@ -20,6 +21,8 @@ protected:
     int is_association;
     Class_4_Rect m_class4_rect;
     Class_3_Rect m_class3_rect;
+    Class_2_Rect m_class2_rect;
+    Class_1_Rect m_class1_rect;
 
     typedef Range_tree_node * link_type;
     friend struct Range_tree_node ;

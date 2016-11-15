@@ -5,7 +5,6 @@
 #include <iostream>
 using namespace std;
 
-#include "utility.h"
 #define check(a, b) if(a == b.end()) continue;
 
 struct pointcmp_y1{
@@ -87,10 +86,11 @@ bool Range_tree::make_tree( std::vector<QPoint>::iterator  beg,
 
 std::vector<QRect> Range_tree::traverse(int type){
     std::vector<QRect> rects;
-
+    //if(type == 3)
+    //    m_class1_rect.find_type(header, rects);
+    //    m_class2_rect.find_type(header, rects);
     //findMiddleRectangle(header, rects);
-    // find_type2(header, rects);
-      traverse(header, rects, type);
+    traverse(header, rects, type);
     //cout<<rects<<endl;
     //cout<< header->left_link->sublayer->header->region<<endl;
     return rects;
@@ -102,14 +102,13 @@ void Range_tree::traverse(link_type root, std::vector<QRect>& rects, int type){
 
         if(type == 1)
             m_class3_rect.findMiddleRectangle(root, rects);
-        else{
-            m_class4_rect.find_type2(root, rects);
-        }
-            //find_type2(root, rects);
+        else if(type == 2){
+            m_class4_rect.find_type_new2(root, rects);
+        }else
+            m_class1_rect.find_type(root, rects);
 
         traverse(root->left_link, rects, type);
         traverse(root->right_link, rects, type);
-
     }
 
 }

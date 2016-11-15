@@ -21,7 +21,9 @@ SOURCES += main.cpp\
     range_tree.cpp \
     segment_tree.cpp \
     class_4_rect.cpp \
-    class_3_rect.cpp
+    class_3_rect.cpp \
+    class_2_rect.cpp \
+    class_1_rect.cpp
 
 HEADERS  += mainwindow.h \
     renderarea.h \
@@ -38,7 +40,9 @@ HEADERS  += mainwindow.h \
     utils.h \
     class_4_rect.h \
     range_tree_node.h \
-    class_3_rect.h
+    class_3_rect.h \
+    class_2_rect.h \
+    class_1_rect.h
 
 FORMS    += mainwindow.ui
 

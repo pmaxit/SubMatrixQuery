@@ -8,6 +8,7 @@
 #include <vector>
 
 #include "range_tree_node.h"
+
 using namespace std;
 
 class Class_4_Rect
@@ -18,6 +19,7 @@ protected:
 
 public:
     Class_4_Rect();
+    void find_type_new2(link_type node, std::vector<QRect> &rects);
     void find_type2(link_type node, std::vector<QRect> &rects);
 };
 

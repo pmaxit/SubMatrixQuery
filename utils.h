@@ -11,11 +11,11 @@
 #define CI(x, y) std::make_pair(x, y)
 
 
-  struct compareInterval{
-    bool operator()(const Interval &it1, const Interval &it2){
+struct compareInterval{
+   bool operator()(const Interval &it1, const Interval &it2){
       return it1 < it2;
-    }
-  };
+   }
+};
 
 template<class T>
 Interval getInterval(const T &rect, int dimension){

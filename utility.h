@@ -17,6 +17,8 @@
 #include <unordered_set>
 #include <utility>
 #include <valarray>
+#include <QPoint>
+#include <QRect>
 
 namespace pretty_print
 {
@@ -435,16 +437,8 @@ namespace std
         return stream << ::pretty_print::print_container_helper<T, TChar, TCharTraits>(container);
     }
 
-    ostream &operator<<(std::ostream &out, const QPoint &p){
-        return out<<"Point("<<p.x()<<","<<p.y()<<")";
-    }
-
-    ostream &operator<<(std::ostream &out, const QRect &r){
-        return out<<"Rect[ "<<r.topLeft()<< r.bottomRight()<< " ] ";
-    }
-
+    //std::ostream &operator<<(std::ostream &out, const QPoint &p);
+    //std::ostream &operator<<(std::ostream &out, const QRect &r);
 }
-
-
 
 #endif  // H_PRETTY_PRINT
