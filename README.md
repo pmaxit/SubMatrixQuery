@@ -1,1 +1,1 @@
-Project to compute maximum area empty rectangle in a set of 2D points.
+Project to compute maximum area empty rectangle around a query point in a set of 2D points.
